@@ -1,0 +1,15 @@
+{{#if loggedIn}}
+<div class="col-auto">
+    <h2>Welcome, {{username}}</h2>
+</div>
+{{!-- create a new blog form --}}
+{{> create-blog}}
+{{!-- if user has written posts, show post details below --}}
+{{#if blogPosts.length}}
+{{#each blogPosts as |blogPost|}}
+{{> user-blog-details}}
+{{/each}}
+{{else}}
+{{!-- if user not logged in, redirect to login page --}}
+<a class="nav-link" href="/signup-login">Login or Sign Up to view your Dashboard</a>
+{{/if}}
