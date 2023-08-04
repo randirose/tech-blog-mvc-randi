@@ -24,12 +24,16 @@ Comment.init(
             type: DataTypes.INTEGER,
             references: {
                 //'id' from Blog model
+                model: 'blogPost',
+                key: 'id'
             }
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 //'id' from User
+                model: 'user',
+                key: 'id'
             }
         }
     }, {

@@ -17,7 +17,7 @@ BlogPost.init(
             allowNull: false,
         },
         content: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT
         },
         date_created: {
             type: DataTypes.DATE,
@@ -28,6 +28,8 @@ BlogPost.init(
             type: DataTypes.INTEGER,
             references: {
                 //'id' from User
+                model: 'user',
+                key: 'id'
             }
         }
     },
