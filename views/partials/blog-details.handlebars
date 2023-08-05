@@ -1,10 +1,10 @@
-<div class="card">
+<div class="card mb-5">
   <div class="card-header">
-    {{blogPost.date_created}}
+    {{format_date date_created}}
   </div>
   <div class="card-body">
-    <h5 class="card-title">{{blogPost.title}}</h5>
-    <p class="card-text">{{short_desc blogPost.content}}</p>
-    <a href="/blogPost/{{blogPost.id}}" class="btn btn-primary">Read more</a>
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text">{{post_tease content}}</p>
+    <a href="/blogPost/{{id}}" class="btn btn-primary">Read more</a>
   </div>
 </div>
