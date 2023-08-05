@@ -5,7 +5,7 @@ const logout = async () => {
     });
   
     if (response.ok) {
-      document.location.replace('/login');
+      document.location.replace('/signup-login');
     } else {
       alert('Failed to log out');
     }
@@ -20,7 +20,7 @@ const logout = async () => {
     const password = document.querySelector('#password-login').value.trim();
   
     if (email && password) {
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/api/users/signup-login', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },

@@ -43,4 +43,13 @@ router.get('/blogpost/:id', withAuth, async (req,res)=>{
     }
 });
 
+router.get('/signup-login', (req, res) => {
+	if (req.session.logged_in) {
+		res.redirect('/dashboard');
+		return;
+	}
+
+	res.render('signup-login');
+});
+
 module.exports = router;
