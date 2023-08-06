@@ -20,22 +20,3 @@ const submitComment = async (event)=>{
 
 document.querySelector('.comment-form').addEventListener('submit', submitComment);
 
-const delButton = document.getElementById('deleteComment');
-const delCommentHandler = async (event) => {
-    event.preventDefault();
-    const id = delButton.dataset.id;
-
-    const response = await fetch(`/api/comments/${id}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-          },
-    });
-
-    if (response.ok) {
-        document.location.replace('/dashboard');
-    } else {
-        alert('Sorry, failed to delete comment');
-    }
-};
-delButton.addEventListener('click', delCommentHandler);
