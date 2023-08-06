@@ -49,27 +49,4 @@ router.delete('/:id', withAuth, async (req, res)=>{
     }
 });
 
-// router.get('/blogPost/:id', async (req,res)=>{
-//     try {
-//         const blogData = await BlogPost.findByPk(req.params.id, {
-//             include: [
-//                 {
-//                     model: User,
-//                     attributes: ['username']
-//                 }, {
-//                     model: Comment,
-//                     include: [User]
-//                 }
-//             ]
-//         });
-//         const blogPost = blogData.get({ plain:true });
-//         res.render('blogPost', {
-//             ...blogPost,
-//             loggedIn: req.session.loggedIn
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
 module.exports = router;
