@@ -6,8 +6,6 @@
 {{> create-blog}}
 {{!-- if user has written posts, show post details below --}}
 {{#if blogPosts.length}}
-<script src="/js/delBlog.js"></script>
-<script src="/js/updateBlog.js"></script>
 {{#each blogPosts as |blogPost|}}
 {{> user-blog-details}}
 {{/each}}

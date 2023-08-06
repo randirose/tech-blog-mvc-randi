@@ -1,7 +1,9 @@
+const delButton = document.getElementById('deleteBtn');
 const delBlogHandler = async (event) => {
-    const id = event.target.getAttribute('data-id');
+    event.preventDefault();
+    const id = delButton.dataset.id;
 
-    const response = await fetch(`/api/blogpost/${id}`, {
+    const response = await fetch(`/api/blogpost/edit-post/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -14,5 +16,4 @@ const delBlogHandler = async (event) => {
         alert('Sorry, failed to delete blog post');
     }
 };
-const delButton = document.querySelector('#deleteBtn');
 delButton.addEventListener('click', delBlogHandler);

@@ -6,3 +6,9 @@
     color: white;
     text-decoration: none;
 }
+
+#loginBtn,
+#signupBtn {
+    align-items: center;
+    max-width: 100px;
+}

@@ -1,11 +1,12 @@
 const updateBlogHandler = async (event) => {
     event.preventDefault();
-    const id = event.target.getAttribute('data-id').value;
+    const button = document.getElementById('createBtn');
+    const id = button.dataset.id;
 
     const title = document.querySelector('#update-title').value.trim();
     const content = document.querySelector('#update-text').value.trim();
 
-    const response = await fetch(`api/blogpost/edit-post/${id}`, {
+    const response = await fetch(`/api/blogpost/edit-post/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,

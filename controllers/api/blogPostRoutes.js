@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try {
-      const newBlog = await BlogPost.findByPk({
+      const newBlog = await BlogPost.create({
         ...req.body,
         user_id: req.session.user_id,
       });
@@ -38,7 +38,7 @@ router.post('/', withAuth, async (req, res) => {
 
   
   
-  router.delete('/:id', withAuth, async (req, res) => {
+  router.delete('/edit-post/:id', withAuth, async (req, res) => {
     try {
       const blogData = await BlogPost.destroy({
         where: {
