@@ -1,4 +1,4 @@
-const commentBtn = document.getElementById('commentBtn');
+const commentBtn = document.querySelector('.comment-form');
 
 const submitComment = async (event)=>{
     event.preventDefault();

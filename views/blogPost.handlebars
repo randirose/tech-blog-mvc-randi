@@ -1,9 +1,9 @@
 {{#if loggedIn}}
-<div class="card text-bg-light mb-3" style="max-width: 18rem;">
+<div class="card text-bg-light mb-3">
   <div class="card-header">Created by {{user.username}} on {{format_date date_created}}</div>
   <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <p class="card-text">{{content}}</p>
+    <h5 class="card-title"><a href="/blogpost/{{id}}">{{title}}</a></h5>
+    {{!-- <p class="card-text">{{content}}</p> --}}
   </div>
 </div>
 {{!-- comment form --}}
@@ -14,6 +14,7 @@
 {{/each}}
 {{else}}
 {{!-- link to login page --}}
-<a class="nav-link" href="/signup-login">You must login or signup to view this page</a>
+<a class="nav-link" href="/login">You must login or signup to view this page</a>
 {{/if}}
-<script src="/js/signup-login-logout.js"></script>
+<script src="/js/logout.js"></script>
+<script src="/js/comments.js"></script>

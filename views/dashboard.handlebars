@@ -9,9 +9,12 @@
 {{#each blogPosts as |blogPost|}}
 {{> user-blog-details}}
 {{/each}}
+{{/if}}
 {{else}}
 {{!-- if user not logged in, redirect to login page --}}
-<a class="nav-link" href="/signup-login">Login or Sign Up to view your Dashboard</a>
+<a class="nav-link" href="/login">Login or Sign Up to view your Dashboard</a>
 {{/if}}
-<script src="/js/signup-login-logout.js"></script>
+{{#if loggedIn}}
 <script src="/js/dashboard.js"></script>
+<script src="/js/readMore.js"></script>
+{{/if}}

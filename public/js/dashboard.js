@@ -1,17 +1,17 @@
-const createButton = document.getElementById('createBtn');
-const delButton = document.getElementById('deleteBtn');
-const readMoreButton = document.getElementById('readMoreBtn');
+const createButton = document.querySelector('.create-blog');
+const delButton = document.querySelector('#deleteBtn');
+
 
 const newBlogHandler = async(event)=>{
     event.preventDefault();
 
     const title = document.querySelector('#blogpost-title').value.trim();
-    const blogContent = document.querySelector('#blogpost-text').value.trim();
+    const content = document.querySelector('#blogpost-text').value.trim();
 
-    if (title && blogContent) {
+    if (title && content) {
         const response = await fetch('/api/blogpost', {
             method: 'POST',
-            body: JSON.stringify({ title, blogContent }),
+            body: JSON.stringify({ title, blogContent: content }),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -39,13 +39,6 @@ const delBlogHandler = async (event) => {
     }
 };
 
-const readMoreHandler = async (event) => {
-    const id = event.target.getAttribute('data-id');
-
-    document.location.replace(`/blogpost/${id}`);
-
-};
 
 createButton.addEventListener('submit', newBlogHandler);
 delButton.addEventListener('click', delBlogHandler);
-readMoreButton.addEventListener('click', readMoreHandler);

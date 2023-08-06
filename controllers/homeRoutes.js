@@ -43,13 +43,33 @@ router.get('/blogpost/:id', withAuth, async (req,res)=>{
     }
 });
 
-router.get('/signup-login', (req, res) => {
-	if (req.session.logged_in) {
+router.get('/dashboard', withAuth, async (req, res)=>{
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: {
+                exclude: ['password']
+            },
+            include: [{
+                model: BlogPost
+            }]
+        });
+        const user = userData.get({ plain:true });
+        res.render('dashboard', {
+            ...user,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/login', (req, res) => {
+	if (req.session.loggedIn) {
 		res.redirect('/dashboard');
 		return;
 	}
 
-	res.render('signup-login');
+	res.render('login');
 });
 
 module.exports = router;
