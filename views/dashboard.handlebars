@@ -6,6 +6,8 @@
 {{> create-blog}}
 {{!-- if user has written posts, show post details below --}}
 {{#if blogPosts.length}}
+<script src="/js/delBlog.js"></script>
+<script src="/js/updateBlog.js"></script>
 {{#each blogPosts as |blogPost|}}
 {{> user-blog-details}}
 {{/each}}
@@ -14,7 +16,4 @@
 {{!-- if user not logged in, redirect to login page --}}
 <a class="nav-link" href="/login">Login or Sign Up to view your Dashboard</a>
 {{/if}}
-{{#if loggedIn}}
-<script src="/js/dashboard.js"></script>
-<script src="/js/readMore.js"></script>
-{{/if}}
+<script src="/js/createBlog.js"></script>

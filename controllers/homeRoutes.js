@@ -13,6 +13,7 @@ router.get('/', async (req,res)=>{
         const blogPosts = blogData.map((blogPost)=> blogPost.get({ plain:true }));
         res.render('homepage', {
             blogPosts,
+            // username: User.username,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
@@ -34,7 +35,7 @@ router.get('/blogpost/:id', withAuth, async (req,res)=>{
             ]
         });
         const blogPost = blogData.get({ plain:true });
-        res.render('blogPost', {
+        res.render('blogpost', {
             ...blogPost,
             loggedIn: req.session.loggedIn
         });
@@ -42,6 +43,54 @@ router.get('/blogpost/:id', withAuth, async (req,res)=>{
         res.status(500).json(err);
     }
 });
+
+router.get('/edit-post/:id', withAuth, async (req, res)=>{
+    try {
+      const blogData = await BlogPost.findByPk(req.params.id, {
+        include: [
+          {
+              model: User,
+              attributes: ['username']
+          }, {
+              model: Comment,
+              include: [User]
+          }
+      ]
+      });
+        if (!blogData) {
+        res.status(404).json({ message: 'No blog post found with this is' });
+        return;
+        }
+      const blogPost = blogData.get({ plain:true });
+      res.render('edit-post', {
+        ...blogPost,
+        loggedIn: req.session.loggedIn
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+  router.put('/edit-post/:id', withAuth, async (req, res)=>{
+    try {
+      const blogData = await BlogPost.update({
+        title: req.body.title,
+        content: req.body.content
+      }, {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id
+        }
+      });
+      if (!blogData) {
+        res.status(404).json({ message: 'No blog post found with this is' });
+        return;
+      }
+      res.status(200).json(blogData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 router.get('/dashboard', withAuth, async (req, res)=>{
     try {
