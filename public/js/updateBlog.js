@@ -5,7 +5,7 @@ const updateBlogHandler = async (event) => {
     const title = document.querySelector('#update-title').value.trim();
     const content = document.querySelector('#update-text').value.trim();
 
-    const response = await fetch(`/edit-post/${id}`, {
+    const response = await fetch(`api/blogpost/edit-post/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,

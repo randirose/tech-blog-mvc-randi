@@ -15,6 +15,27 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  router.put('/edit-post/:id', withAuth, async (req, res)=>{
+    try {
+      const blogData = await BlogPost.update({
+        title: req.body.title,
+        content: req.body.content
+      }, {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id
+        }
+      });
+      if (!blogData) {
+        res.status(404).json({ message: 'No blog post found with this is' });
+        return;
+      }
+      res.status(200).json(blogData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
   
   
   router.delete('/:id', withAuth, async (req, res) => {
