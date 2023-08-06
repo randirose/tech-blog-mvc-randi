@@ -1,5 +1,6 @@
-.card-title h5 {
+.card-title a {
     text-decoration: none;
+    color: black;
 }
 
 #updateBtn a {
@@ -11,4 +12,11 @@
 #signupBtn {
     align-items: center;
     max-width: 100px;
+}
+
+.signup-form,
+.login-form {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 100%;
 }

@@ -4,7 +4,7 @@ const submitComment = async (event)=>{
     const comment_text = document.querySelector('#comment').value.trim();
 
     if (comment_text) {
-        await fetch('api/comments', {
+        await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({
                 blog_id,
@@ -35,7 +35,7 @@ const delCommentHandler = async (event) => {
     if (response.ok) {
         document.location.replace('/dashboard');
     } else {
-        alert('Sorry, failed to delete blog post');
+        alert('Sorry, failed to delete comment');
     }
 };
 delButton.addEventListener('click', delCommentHandler);

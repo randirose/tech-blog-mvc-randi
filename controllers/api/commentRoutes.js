@@ -6,7 +6,8 @@ router.get('/', withAuth, async (req,res)=>{
     try {
         const commentData = await Comment.findAll({
             include: [{
-                model: User
+                model: User,
+                attributes: ['username']
             }]
         });
         const comments = commentData.map((comment)=> comment.get({ plain:true }));
@@ -19,7 +20,7 @@ router.get('/', withAuth, async (req,res)=>{
     }
 });
 
-router.post('/', async (req, res)=>{
+router.post('/', withAuth, async (req, res)=>{
     try {
         const newComment = await Comment.create({
             ...req.body,
