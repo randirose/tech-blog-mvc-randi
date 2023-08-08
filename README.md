@@ -63,26 +63,35 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Here are the instructions to install this app:  
+- Clone the repo here: https://github.com/randirose/tech-blog-mvc-randi  
+- Make sure `Node.js` and `MySQL` are installed on your local machine  
+- Set up your database in your `MySQL Shell` and you can seed your database using the provided examples, or your own data, and run `npm run seed` in your CLI  
+- Set up your environment variables by creating a `.env` file and adding the database you're using (`tech_blog_db`), and your `MySQL` user and password.  
+- Run `npm start` to start your server. You can view the application on localhost:3001 or on the live URL (below).  
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Visit the live site, deployed on `Heroku`, here: 
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+View screenshots of this app in action below:  
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+![alt text](assets/images/screenshot.png)
+
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+AskBCS on Slack: helped with commentRoutes (post) and blogPostRoutes (put)  
 
 ## Features
 
-If your project has a lot of features, list them here.
+Features for this application include:  
+- Sequelize models for BlogPost, Comment, and User. Relationships between models set up in index.js  
+- Express routes for blog posts, comments, users, and home routes  
+- Front end JavaScript for blog post functionalities, including creating, editing, and deleting a post  
+- Front end JavaScript for comment post functionality  
+- Front end JavaScript for login/signup/logout functionality  
+- MySQL and Sequelize seed data and commands set up using JavaScript  
+- Authentication using Express Session and connect-session-sequelize libraries, as well as bcrypt for password hashing  
+- Handlebars helper function format_date for viewing a timestamp in the correct mm/dd/yyyy format  
+- Handlebars view engine to create dynamically updated html pages
