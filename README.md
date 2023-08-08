@@ -86,12 +86,12 @@ AskBCS on Slack: helped with commentRoutes (post) and blogPostRoutes (put)
 ## Features
 
 Features for this application include:  
-- Sequelize models for BlogPost, Comment, and User. Relationships between models set up in index.js  
-- Express routes for blog posts, comments, users, and home routes  
-- Front end JavaScript for blog post functionalities, including creating, editing, and deleting a post  
-- Front end JavaScript for comment post functionality  
-- Front end JavaScript for login/signup/logout functionality  
-- MySQL and Sequelize seed data and commands set up using JavaScript  
-- Authentication using Express Session and connect-session-sequelize libraries, as well as bcrypt for password hashing  
-- Handlebars helper function format_date for viewing a timestamp in the correct mm/dd/yyyy format  
-- Handlebars view engine to create dynamically updated html pages
+- `Sequelize` models for `BlogPost`, `Comment`, and `User`. Relationships between models set up in `index.js`  
+- `Express` routes for blog posts, comments, users, and home routes for back-end functionality   
+- Front-end `JavaScript` for blog post functionalities, including creating, editing, and deleting a post  
+- Front-end `JavaScript` for comment post functionality  
+- Front-end `JavaScript` for login/signup/logout functionality  
+- `MySQL` and `Sequelize` seed data and commands set up using `JavaScript`  
+- Authentication using `Express Session` and `connect-session-sequelize` libraries, as well as `bcrypt` for password hashing  
+- `Handlebars` helper function `format_date` for viewing a timestamp in the correct `mm/dd/yyyy` format  
+- `Handlebars view engine` to create dynamically updated html pages
