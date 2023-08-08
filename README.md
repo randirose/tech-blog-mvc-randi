@@ -79,7 +79,7 @@ View screenshots of this app in action below:
 ![Homepage](assets/screenshot-homepage.png)  
 ![Login or Signup](assets/screenshot-login.png)  
 ![Dashboard](assets/screenshot-dash.png)  
-![Blog Post with Comments](assets/images/screenshot.png)  --blogpost page
+![Blog Post with Comments](assets/screenshot-blogpost-comments.png)  
 ![Create New Blog Post](assets/screenshot-create.png)  
 ![Update or Delete Blog Post](assets/screenshot-update-delete.png)  
 ![New User Dash (empty)](assets/screenshot-empty-dash.png)  
@@ -89,8 +89,7 @@ View screenshots of this app in action below:
 ## Credits
 
 AskBCS on Slack:  
-- helped with commentRoutes (post) and blogPostRoutes (put)  
-- helped fix 'internal server error' after Heroku deployment  
+- helped with commentRoutes (post) and blogPostRoutes (put)   
 
 ## Features
 
