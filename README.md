@@ -2,7 +2,7 @@
 
 ## Description
 
-This app is our first full stack assignment in this Bootcamp! This tech blog is a CMS-style site that allows users to publish articles, blog posts, and comments/opinions on other posts.  
+This app is our first full stack assignment in this Bootcamp! This tech blog is a CMS-style site that allows users to publish articles, blog posts, and comments/opinions on other posts. Visit it live here: https://shrouded-stream-17541-93e4f0367693.herokuapp.com/  
   
 It uses `MVC (model-view-controller)` to organize the user-interface (views), data (models), and controlling logic (controllers). It uses the 'separation of concerns' principal, which provides for simple and efficient division of logic and labor, which makes our code easier to improve and maintain.  
   
