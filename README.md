@@ -72,7 +72,7 @@ Here are the instructions to install this app:
 
 ## Usage
 
-Visit the live site, deployed on `Heroku`, here: 
+Visit the live site, deployed on `Heroku`, here: https://shrouded-stream-17541-93e4f0367693.herokuapp.com/  
 
 View screenshots of this app in action below:  
 
