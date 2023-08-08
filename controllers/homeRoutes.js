@@ -92,6 +92,16 @@ router.get('/dashboard', withAuth, async (req, res)=>{
     }
 });
 
+router.get('/create-new-blog', withAuth, async (req, res)=>{
+    try {
+        res.render('create-new-blog', {
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('/login', (req, res) => {
 	if (req.session.loggedIn) {
 		res.redirect('/dashboard');

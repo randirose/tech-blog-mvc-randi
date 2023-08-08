@@ -1,17 +1,23 @@
 {{#if loggedIn}}
-<div class="col-auto">
+<div class="col-auto pb-3">
     <h2>Welcome, {{username}}</h2>
 </div>
 {{!-- create a new blog form --}}
-{{> create-blog}}
+<div class="mb-5">
+<button id="addBtn" type="submit" class="addBtn btn btn-primary"><a href="/create-new-blog">Add New Blog Post</a></button>
+</div>
 {{!-- if user has written posts, show post details below --}}
 {{#if blogPosts.length}}
+<div class="col-auto pb-3">
+    <h3 id="your-blogs">Your Blogs:</h4]3>
+</div>
 {{#each blogPosts as |blogPost|}}
 {{> user-blog-details}}
 {{/each}}
+{{else}}
+<p>Welome to Randi's Tech Blog! Start by creating a blog post or checking out some of the <a href="/">blogs already here!</a></p>
 {{/if}}
 {{else}}
 {{!-- if user not logged in, redirect to login page --}}
 <a class="nav-link" href="/login">Login or Sign Up to view your Dashboard</a>
 {{/if}}
-<script src="/js/createBlog.js"></script>

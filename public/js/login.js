@@ -35,7 +35,7 @@ const signUpHandler = async (event)=>{
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         } else {
             alert('Sorry, unable to sign up new user');
         }

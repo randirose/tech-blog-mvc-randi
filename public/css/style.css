@@ -1,6 +1,37 @@
+:root {
+    --blue: #5580a0;
+    --pink: #eac0b3;
+}
+
+.navbar-brand {
+    color: var(--pink);
+    text-shadow: 1px 1px 1px lightgray;
+    font-size: 200%;
+}
+
+.nav-item {
+    font-weight: bold;
+    font-size: 150%;
+}
+.card-header {
+    background-color: var(--pink);
+    font-weight: bold;
+}
 .card-title a {
     text-decoration: none;
-    color: black;
+    color: var(--blue);
+    font-size: 150%;
+}
+
+#loginBtn,
+#signupBtn,
+#updateBtn,
+#createBtn,
+#addBtn,
+#commentBtn {
+    align-items: center;
+    background-color: var(--blue);
+    border: none;
 }
 
 #updateBtn a {
@@ -8,14 +39,43 @@
     text-decoration: none;
 }
 
+.addBtn a {
+    color: white;
+    text-decoration: none;
+}
+
 #loginBtn,
 #signupBtn {
-    align-items: center;
     width: 100px;
+}
+
+#loginBtn:hover,
+#signupBtn:hover,
+#updateBtn:hover,
+#createBtn:hover,
+#addBtn:hover,
+#commentBtn:hover {
+    background-color: #50697d;
+}
+
+#deleteBtn {
+    align-items: center;
+    background-color: var(--pink);
+    border: none;
+}
+
+#deleteBtn:hover {
+    background-color: #d49d81;
 }
 
 .signup-form,
 .login-form, .create-blog, .update-blog label {
-    font-weight: bolder;
+    font: weight 200px;;
+    font-size: 150%;
+}
+
+#your-blogs,
+#comments-label {
+    font: weight 200px;;
     font-size: 150%;
 }
