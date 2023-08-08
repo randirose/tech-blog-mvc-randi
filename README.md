@@ -76,12 +76,21 @@ Visit the live site, deployed on `Heroku`, here:
 
 View screenshots of this app in action below:  
 
-![alt text](assets/images/screenshot.png)
+![Homepage](assets/screenshot-homepage.png)  
+![Login or Signup](assets/screenshot-login.png)  
+![Dashboard](assets/screenshot-dash.png)  
+![Blog Post with Comments](assets/images/screenshot.png)  --blogpost page
+![Create New Blog Post](assets/screenshot-create.png)  
+![Update or Delete Blog Post](assets/screenshot-update-delete.png)  
+![New User Dash (empty)](assets/screenshot-empty-dash.png)  
+![New User Dash (added post)](assets/screenshot-new-user.png)  
 
 
 ## Credits
 
-AskBCS on Slack: helped with commentRoutes (post) and blogPostRoutes (put)  
+AskBCS on Slack:  
+- helped with commentRoutes (post) and blogPostRoutes (put)  
+- helped fix 'internal server error' after Heroku deployment  
 
 ## Features
 
