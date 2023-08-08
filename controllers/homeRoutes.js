@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, BlogPost, Comment } = require('../models/');
 const withAuth = require('../utils/auth');
 
+// get all blog posts made on home page
 router.get('/', async (req,res)=>{
     try {
         const blogData = await BlogPost.findAll({
@@ -21,6 +22,7 @@ router.get('/', async (req,res)=>{
     }
 });
 
+// get a blog post by id if user clicks on title
 router.get('/blogpost/:id', withAuth, async (req,res)=>{
     try {
         const blogData = await BlogPost.findByPk(req.params.id, {
@@ -44,6 +46,7 @@ router.get('/blogpost/:id', withAuth, async (req,res)=>{
     }
 });
 
+// gets blog post contents for user to edit
 router.get('/edit-post/:id', withAuth, async (req, res)=>{
     try {
       const blogData = await BlogPost.findByPk(req.params.id, {
@@ -71,7 +74,7 @@ router.get('/edit-post/:id', withAuth, async (req, res)=>{
     }
   });
 
-
+// gets all blog post from specific user that's signed in on their dashboard
 router.get('/dashboard', withAuth, async (req, res)=>{
     try {
         const userData = await User.findByPk(req.session.user_id, {
@@ -92,6 +95,7 @@ router.get('/dashboard', withAuth, async (req, res)=>{
     }
 });
 
+// if user clicks add new blog on their dashboard
 router.get('/create-new-blog', withAuth, async (req, res)=>{
     try {
         res.render('create-new-blog', {
@@ -102,6 +106,7 @@ router.get('/create-new-blog', withAuth, async (req, res)=>{
     }
 });
 
+// redirects to dash once logged in
 router.get('/login', (req, res) => {
 	if (req.session.loggedIn) {
 		res.redirect('/dashboard');

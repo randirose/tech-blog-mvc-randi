@@ -1,3 +1,5 @@
+// front end handler for user to update blog post
+
 const updateBlogHandler = async (event) => {
     event.preventDefault();
     const button = document.getElementById('createBtn');

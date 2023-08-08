@@ -1,3 +1,5 @@
+// front end handler for when user clicks on the logout option in the nav
+
 const logout = async () => {
     const response = await fetch('/api/users/logout', {
       method: 'POST',

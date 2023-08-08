@@ -1,3 +1,5 @@
+// front end for when user creates a new blog post
+
 const createButton = document.querySelector('.create-blog');
 
 const newBlogHandler = async(event)=>{

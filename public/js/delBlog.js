@@ -1,3 +1,5 @@
+// front end for when user clicks delete blog
+
 const delButton = document.getElementById('deleteBtn');
 const delBlogHandler = async (event) => {
     event.preventDefault();

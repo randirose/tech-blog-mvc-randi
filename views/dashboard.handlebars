@@ -2,7 +2,7 @@
 <div class="col-auto pb-3">
     <h2>Welcome, {{username}}</h2>
 </div>
-{{!-- create a new blog form --}}
+{{!-- click to take to create a new blog form --}}
 <div class="mb-5">
 <button id="addBtn" type="submit" class="addBtn btn btn-primary"><a href="/create-new-blog">Add New Blog Post</a></button>
 </div>
@@ -15,7 +15,7 @@
 {{> user-blog-details}}
 {{/each}}
 {{else}}
-<p>Welome to Randi's Tech Blog! Start by creating a blog post or checking out some of the <a href="/">blogs already here!</a></p>
+<p>Welome to Randi's Tech Blog! Start by creating a blog post or checking out some of the <a href="/"><span id="inline-link">blogs already here!</span></a></p>
 {{/if}}
 {{else}}
 {{!-- if user not logged in, redirect to login page --}}

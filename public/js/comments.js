@@ -1,3 +1,4 @@
+// front-end for when user submits a new comment
 const submitComment = async (event)=>{
     event.preventDefault();
     const blog_id = document.querySelector('.comment-form').dataset.blogid;
